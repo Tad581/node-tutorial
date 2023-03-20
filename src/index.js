@@ -8,6 +8,11 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(express.urlencoded({
+    extended: true,
+}));
+app.use(express.json());
+
 // HTTP logger
 app.use(morgan("combined"));
 
@@ -17,5 +22,14 @@ app.set("view engine", ".hbs");
 app.set("views", path.join(__dirname, "resources/views"));
 
 app.get("/trang-chu", (req, res) => res.render("home"));
+
+app.get("/search", (req, res) => {
+  res.render("search");
+});
+
+app.post("/search", (req, res) => {
+  console.log("res.body :>> ", req.body);
+  res.render("search");
+});
 
 app.listen(port, () => console.log("http://localhost:" + port));
