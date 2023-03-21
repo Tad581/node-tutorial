@@ -9,9 +9,9 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
-  express.urlencoded({
-    extended: true,
-  }),
+    express.urlencoded({
+        extended: true,
+    }),
 );
 app.use(express.json());
 
@@ -21,9 +21,12 @@ app.use(morgan('combined'));
 // Template engine
 app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
 const route = require('./routes');
+
+const db = require('./config/db/index');
+db.connect();
 
 // Routes init
 route(app);
