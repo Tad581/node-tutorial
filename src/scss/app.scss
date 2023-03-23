@@ -1,5 +1,21 @@
-@import  'variables.scss';
+@import "variables.scss";
 
 h1 {
-    color: $red;
+  color: $red;
+}
+
+.courses-detail {
+  height: 600px;
+  img {
+    margin-top: 10px;
+    height: 70%;
+    width: auto;
+    object-fit: contain;
+  }
+  .card-body {
+    .card-text {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+  }
 }
