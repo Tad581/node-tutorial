@@ -6,7 +6,7 @@
   "scripts": {
     "prettier": "lint-staged",
     "start": "nodemon --inspect src/index.js",
-    "watch": "node-sass -w src/scss/ -o src/public/css/",
+    "watch": "node-sass -w src/resources/scss/ -o src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,7 +14,8 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^5.1.0",
-    "mongoose": "^5.9.27"
+    "mongoose": "^5.9.27",
+    "mongoose-slug-generator": "^1.0.4"
   },
   "lint-staged": {
     "src/**/*.{js, json, scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
